@@ -13,9 +13,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <img src="/logo_mirante.jpg" alt="Logo Mirante Santo Antônio" className="h-12 w-12 rounded-full object-cover border-2 border-primary" />
-          <span className="text-xl font-serif text-primary hidden sm:block">Mirante Santo Antônio</span>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <img src="/logo_mirante.jpg" alt="Logo Mirante Santo Antônio" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover border-2 border-primary" />
+          <span className="text-lg sm:text-xl font-serif text-primary truncate max-w-[150px] sm:max-w-none">Mirante Santo Antônio</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
@@ -31,19 +31,19 @@ const Navbar = () => {
           </a>
         </div>
 
-        <button className="md:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        <button className="md:hidden text-primary p-2" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border p-4 space-y-4 animate-in slide-in-from-top duration-300">
-          <a href="#acomodacoes" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Acomodações</a>
-          <a href="#gastronomia" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Gastronomia</a>
-          <a href="#experiencias" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Experiências</a>
-          <a href="#depoimentos" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Depoimentos</a>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block">
+          <a href="#acomodacoes" className="block text-lg font-medium py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Acomodações</a>
+          <a href="#gastronomia" className="block text-lg font-medium py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Gastronomia</a>
+          <a href="#experiencias" className="block text-lg font-medium py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Experiências</a>
+          <a href="#depoimentos" className="block text-lg font-medium py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Depoimentos</a>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block pt-2">
             <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full py-6 text-lg">
               Reservar via WhatsApp
             </Button>
