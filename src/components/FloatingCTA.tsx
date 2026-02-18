@@ -1,20 +1,27 @@
 "use client";
 
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
 
 const FloatingCTA = () => {
+  const phoneNumber = "5532984263074";
+  const message = encodeURIComponent("Olá! Gostaria de mais informações sobre as acomodações e disponibilidade da Pousada Mirante Santo Antônio.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
   return (
     <a 
-      href="https://wa.me/5532999999999" 
+      href={whatsappUrl}
       target="_blank" 
       rel="noopener noreferrer"
-      className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center gap-2 group"
+      className="fixed bottom-8 right-8 z-50 hover:scale-110 transition-transform duration-300 flex items-center gap-2 group"
     >
-      <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold px-0 group-hover:px-2">
+      <div className="bg-white text-primary font-bold py-2 px-4 rounded-full shadow-xl border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
         Reserve via WhatsApp
-      </span>
-      <MessageCircle size={32} fill="currentColor" />
+      </div>
+      <img 
+        src="/whatsapp_logo.png" 
+        alt="WhatsApp" 
+        className="w-16 h-16 drop-shadow-2xl"
+      />
     </a>
   );
 };

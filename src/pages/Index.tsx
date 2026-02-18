@@ -9,7 +9,6 @@ import Experiences from '@/components/Experiences';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
-import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
@@ -24,7 +23,6 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingCTA />
-      <MadeWithDyad />
     </div>
   );
 };

@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const phoneNumber = "5532984263074";
+  const message = encodeURIComponent("Olá! Gostaria de mais informações sobre as acomodações e disponibilidade da Pousada Mirante Santo Antônio.");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -20,10 +23,12 @@ const Navbar = () => {
           <a href="#gastronomia" className="text-sm font-medium hover:text-secondary transition-colors">Gastronomia</a>
           <a href="#experiencias" className="text-sm font-medium hover:text-secondary transition-colors">Experiências</a>
           <a href="#depoimentos" className="text-sm font-medium hover:text-secondary transition-colors">Depoimentos</a>
-          <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
-            <Phone className="mr-2 h-4 w-4" />
-            Reservar Agora
-          </Button>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
+              <Phone className="mr-2 h-4 w-4" />
+              Reservar Agora
+            </Button>
+          </a>
         </div>
 
         <button className="md:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
@@ -38,9 +43,11 @@ const Navbar = () => {
           <a href="#gastronomia" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Gastronomia</a>
           <a href="#experiencias" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Experiências</a>
           <a href="#depoimentos" className="block text-lg font-medium py-2" onClick={() => setIsOpen(false)}>Depoimentos</a>
-          <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full py-6 text-lg">
-            Reservar via WhatsApp
-          </Button>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full py-6 text-lg">
+              Reservar via WhatsApp
+            </Button>
+          </a>
         </div>
       )}
     </nav>
